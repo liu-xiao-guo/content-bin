@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "starting to exec a binary in the producer from consumer"
+exec "$SNAP/extra-bin/echo_producer" "$@"
+
+
