@@ -1,18 +1,18 @@
-name: hello-consumer
+name: content-bin-consumer
 version: "1.0"
-summary: The 'hello-consumer' snap
+summary: The 'content-bin-consumer' snap
 description: |
     This is a simple snap example showing how to share content
 grade: stable
 confinement: strict
-type: app  #it can be gadget or framework
 
 apps:
  echo:
    command: bin/echo_consumer
 
 plugs:
-  content:
+  content1:
+    interface: content
     content: executables
     target: $SNAP/extra-bin
 
@@ -20,3 +20,6 @@ parts:
  hello:
   plugin: dump
   source: .
+  install: |
+    # Create directory to serve as mount point for extra-bin
+    mkdir -p $SNAPCRAFT_PART_INSTALL/extra-bin
