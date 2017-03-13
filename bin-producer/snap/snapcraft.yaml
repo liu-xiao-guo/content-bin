@@ -7,10 +7,6 @@ description: |
 grade: stable
 confinement: strict
 
-apps:
- echo:
-   command: bin/echo_producer
-
 slots:
   content1:
     interface: content
